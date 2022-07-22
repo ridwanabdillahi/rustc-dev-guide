@@ -44,7 +44,7 @@ You can also invent your own tags and attributes.
 
 ### CodeView/PDB
 
-PDB (Program Database) is a file format created by Microsoft that contains debug information.
+[PDB] (Program Database) is a file format created by Microsoft that contains debug information.
 PDBs can be consumed by debuggers such as WinDbg/CDB and other tools to display debug information.
 A PDB contains multiple streams that describe debug information about a specific binary such
 as types, symbols, and source files used to compile the given binary. CodeView is another
@@ -346,6 +346,7 @@ but may have to add some mode to let the compiler understand some extensions.
 [Apple developer documentation for System Integrity Protection]: https://developer.apple.com/library/archive/releasenotes/MacOSX/WhatsNewInOSX/Articles/MacOSX10_11.html#//apple_ref/doc/uid/TP40016227-SW11
 [https://github.com/rust-lang/lldb]: https://github.com/rust-lang/lldb
 [https://github.com/rust-lang/llvm-project]: https://github.com/rust-lang/llvm-project
-[Windows Debugging Tools]: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
+[PDB]: https://llvm.org/docs/PDB/index.html
 [symbol records]: https://llvm.org/docs/PDB/CodeViewSymbols.html
 [type records]: https://llvm.org/docs/PDB/CodeViewTypes.html
+[Windows Debugging Tools]: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
