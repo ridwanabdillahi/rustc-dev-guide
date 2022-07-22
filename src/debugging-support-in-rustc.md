@@ -3,7 +3,7 @@
 <!-- toc -->
 
 This document explains the state of debugging tools support in the Rust compiler (rustc).
-It gives an overview of GDB, LLDB,
+It gives an overview of GDB, LLDB, WinDbg/CDB,
 as well as infrastructure around Rust compiler to debug Rust code.
 If you want to learn how to debug the Rust compiler itself,
 see [Debugging the Compiler].
@@ -41,6 +41,15 @@ This program may live in the compiler itself.  DWARF uses a data structure calle
 Debugging Information Entry (DIE) which stores the information as "tags" to denote functions,
 variables etc., e.g., `DW_TAG_variable`, `DW_TAG_pointer_type`, `DW_TAG_subprogram` etc.
 You can also invent your own tags and attributes.
+
+### CodeView/PDB
+
+PDB (Program Database) is a file format created by Microsoft that contains debug information.
+PDBs can be consumed by debuggers such as WinDbg/CDB and other tools to display debug information.
+A PDB contains multiple streams that describe debug information about a specific binary such
+as types, symbols, and source files used to compile the given binary. CodeView is another
+format which defines the structure of [symbol records] and [type records] that appear within
+PDB streams.
 
 ## Supported debuggers
 
@@ -338,3 +347,5 @@ but may have to add some mode to let the compiler understand some extensions.
 [https://github.com/rust-lang/lldb]: https://github.com/rust-lang/lldb
 [https://github.com/rust-lang/llvm-project]: https://github.com/rust-lang/llvm-project
 [Windows Debugging Tools]: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
+[symbol records]: https://llvm.org/docs/PDB/CodeViewSymbols.html
+[type records]: https://llvm.org/docs/PDB/CodeViewTypes.html
